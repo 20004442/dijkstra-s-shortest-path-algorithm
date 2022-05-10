@@ -4,7 +4,8 @@
 To develop a code to find the shortest route from the source to the destination point using Dijkstra's shortest path algorithm.
 
 ## THEORY
-Explain the problem statement
+Best-first search algorithm always selects the path which appears best at that moment. It is the combination of depth-first search and breadth-first search algorithms. Best-first search allows us to take the advantages of both algorithms. With the help of best-first search, at each step, we can choose the most promising node. In the best first search algorithm, we expand the node which is closest to the goal node.
+The best first search uses the concept of a priority queue. It is a search algorithm that works on a specific rule. The aim is to reach the goal from the initial state via the shortest path. Best First Search is an algorithm for finding the shortest path from a given starting node to a goal node in a graph. The algorithm works by expanding the nodes of the graph in order of increasing the distance from the starting node until the goal node is reached.
 
 ## DESIGN STEPS
 
@@ -14,7 +15,19 @@ Identify a location in the google map:
 ### STEP 2:
 Select a specific number of nodes with distance
 
-### STEP -> Write your own steps:
+### STEP 3:
+Start from the initial node and put it in the ordered list.
+
+### STEP 4:
+Repeat the next steps until the GOAL node is reached:
+
+a) If the list is empty, then EXIT the loop returning ‘False’
+
+b) Select the first/top node in the list and move it to the another list. Also, consider the information of the parent node.
+
+c) If the selected node is a GOAL node, then move the node to the list and exit the loop returning ‘True’. The solution can be found by backtracking the path.
+
+d) If the selected node is not the GOAL node, expand node to generate the ‘immediate’ next nodes linked to node and add all those to the list.
 
 
 ## ROUTE MAP
@@ -237,6 +250,7 @@ print("Total Distance={0} Kilometers".format(goal_state_path.path_cost))
 ![image](https://user-images.githubusercontent.com/75235813/167614235-650959c0-d707-4285-b823-055068f148c4.png)
 
 ## Justification:
+In best-first search algorithm, the selected node is verified as parent node or not and starts its search, within the least distance it will be reaching the goal node. Search near every two nodes are always considered with its shortest distance.
 
 ## RESULT:
 Thus an algorithm to find the route from the source to the destination point using best-first search is developed and executed successfully.
